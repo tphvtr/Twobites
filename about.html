@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<title>TwoBites</title>
+	<link rel="stylesheet" href="style.css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+</head>
+<body>
+<script>
+		$(document).ready(function(){
+	$('#nav-icon4').click(function(){
+		$(this).toggleClass('open');
+	});
+});
+		$(document).ready(function(){
+	$('#nav-icon4').click(function(){
+		$(this).toggleClass('close');
+	});
+});
+</script>
+	<header>
+		<div class="header_wrap wrap">
+			<a href="index.html">
+				<span class="logo">
+					<i class="descr_logo">SoGood</i>
+				</span>
+			</a>
+			<nav>
+				<div id="nav-icon4">
+				  <span class="wad"></span>
+				  <span class="wad"></span>
+				  <span class="wad"></span>
+					<ul class="header_menu">
+						<li><a  class="home" href="index.html">Главная</a></li>
+						<li><a  class="feedback" href="feedback.html">Отзывы</a></li>
+						<li><a  class="places" href="place.html">Места</a></li>
+						<li><a  class="contacts active" href="#">О нас</a></li>
+					</ul>
+				</div>
+			</nav>
+		</div>
+		<div class="wrap">
+			<h1 class="heading">В поиске вкусов...</h1>
+			<form class="wrap_search">
+				<input id="search" placeholder="Введите город, район, улицу">
+				<button type="submit" class="main_btn">Поиск</button>
+			</form>
+		</div>
+	</header>
+	<div class="wrap content">
+		<div class="stars">
+			<div class="info_block_text_wrap about">	
+				<h2>Привет, заядлый любитель шаурмы!</h2>
+				<p>Мы прекрасно знаем зачем ты здесь. Ты жаждешь найти лучшую гармонию вкусов, квинтэссенцией которой и является шаверма! Именно поэтому мы решили воплотить в жизнь проект-путеводитель по лучшим шавермам города Киева! Больше не нужно гадать что с тобой будет после съеденной шавермы в том или ином месте, в пару кликов ты сможешь найти ближайшую в твоем районе и узнать о ней все до мельчайших деталей, даже цвет носков шаурмена, если тебя это интересует, конечно. Здесь ты найдешь огромное множество заведений с уникальными оценками оценками и комментариями от пользователей. Также ты можешь добавить свое любимое место, это ли не здорово!
+				</p>
+				<div class="wrap_authors">
+					<div class="img_feedback rounded">
+						<img src="images/me.jpg" alt="Author" class="img_block">
+					</div>
+					<div class="img_feedback rounded">
+						<img src="images/partner.jpeg" alt="Author" class="img_block">
+					</div>
+				</div>
+				<p id="about_descr">
+				с уважением,</p>
+				<p id="about_descr_team">
+				команда TwoBites
+				</p>
+			</div>
+		</div>
+	</div>
+	<footer>
+		<div class="wrap">
+			<div class="e-mail">
+			</div>
+			<p class="descr_footer">Copyright © 2017 Two Bites</p>
+			<div class="social_ntw">
+				<div class="tw_logo"></div>
+				<div class="fb_logo"></div>
+			</div>
+		</div>
+	</footer>
+</body>
+</html>

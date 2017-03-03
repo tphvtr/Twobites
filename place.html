@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<title>TwoBites</title>
+	<link rel="stylesheet" href="style.css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+</head>
+<body>
+<script>
+		$(document).ready(function(){
+	$('#nav-icon4').click(function(){
+		$(this).toggleClass('open');
+	});
+});
+		$(document).ready(function(){
+	$('#nav-icon4').click(function(){
+		$(this).toggleClass('close');
+	});
+});
+</script>
+	<header>
+		<div class="header_wrap wrap">
+			<a href="index.html">
+				<span class="logo">
+					<i class="descr_logo">SoGood</i>
+				</span>
+			</a>
+			<nav>
+				<div id="nav-icon4">
+				  <span class="wad"></span>
+				  <span class="wad"></span>
+				  <span class="wad"></span>
+					<ul class="header_menu">
+						<li><a  class="home" href="index.html">Главная</a></li>
+						<li><a  class="feedback" href="feedback.html">Отзывы</a></li>
+						<li><a  class="places active" href="#">Места</a></li>
+						<li><a  class="contacts" href="about.html">О нас</a></li>
+					</ul>
+				</div>
+			</nav>
+		</div>
+		<div class="wrap">
+			<h1 class="heading">В поиске вкусов...</h1>
+			<form class="wrap_search">
+				<input id="search" placeholder="Введите город, район, улицу">
+				<button type="submit" class="main_btn">Поиск</button>
+			</form>
+		</div>
+	</header>
+	<div class="wrap">
+		<a href="feedback.html#Shulya">
+			<div class="info_block">
+				<div class="img_wrap">
+					<img src="images/shulya.jpg" alt="shulyavka" class="img_block">
+				</div>
+				<span class="adress_shava">м. Шулявская, пр. Победы 48</span>
+				<div class="hot_wrap">
+					
+					<div class="price">$$$
+						<span class="price_descr">35-45грн.</span>
+					</div>
+					<div class="vegan">
+						<span class="vegan_descr">Фалафель</span>
+					</div>
+				</div>
+				<div class="info_stars">
+					<span class="stars_descr">58 комментариев</span>
+					<span class="stars_descr_stars">158 голосов</span>
+				</div>
+				<div class="info_block_text_wrap">	
+					<h2>Шаурма у м.Шулявская</h2>
+					<p>Компактная, сочная, а главное классическая шаурма, которая подойдет всем и каждому. Для вашей любимой женщины здесь есть фалафель! </p>
+				</div>
+			</div>
+		</a>
+		<a href="feedback.html#Polevaya">
+			<div class="info_block">
+				<div class="img_wrap">
+					<img src="images/place_polyana.png" alt="" class="img_block">
+				</div>
+				<span class="adress_shava">ул. Борщаговская 115
+				</span>
+				<div class="hot_wrap">
+					<div class="price">$
+						<span class="price_descr">до 30грн.</span>
+					</div>
+					<div class="vegan">
+						<span class="vegan_descr">Фалафель</span>
+					</div>
+				</div>
+				<div class="info_stars">
+					<span class="stars_descr">145 комментариев</span>
+					<span class="stars_descr_stars">231 голос</span>
+				</div>
+				<div class="info_block_text_wrap">	
+					<h2>Шаурма у ст.т."Полевая"</h2>
+					<p>Одна из самых оригиналных шаверм в этом районе! Слегка острый необычный соус, маринованые огурчики, свежие помидоры и молодые девушки-продавцы сделают эту покупку незабываемой!</p>
+				</div>
+			</div>
+		</a>
+		<a href="feedback.html#Arkadia">
+			<div class="info_block">
+				<div class="img_wrap">
+					<img src="images/arkadia.jpg" alt="" class="img_block">
+				</div>
+				<span class="adress_shava"> ул. Борщаговская 154</span>
+				<div class="hot_wrap">
+					<div class="hot">
+						<span class="hot_descr">
+							Острая!
+						</span>
+					</div>
+					<div class="price">$$
+						<span class="price_descr">35-45грн.</span>
+					</div>
+					<div class="vegan">
+						<span class="vegan_descr">Фалафель</span>
+					</div>
+				</div>
+				<div class="info_stars">
+					<span class="stars_descr">28 комментариев</span>
+					<span class="stars_descr_stars">124 голоса</span>
+				</div>
+				<div class="info_block_text_wrap">	
+					<h2>Шаурма у входа в ТЦ "Arkadia"</h2>
+					<p>Неплохая шаурма, но с очень-очень острым соусом, на любителя</p>
+				</div>
+			</div>
+		</a>
+		<a href="feedback.html">
+			<div class="info_block block_hot">
+				<div class="img_wrap">
+					<img src="images/shava_kpi.jpeg" alt="" class="img_block">
+				</div>
+				<span class="adress_shava">сквер "Поляна", ул. Борщаговская 115</span>
+				<div class="hot_wrap">
+					<div class="hot">
+						<span class="hot_descr">
+							Острая!
+						</span>
+					</div>
+					<div class="price">$$$
+						<span class="price_descr">35-45грн.</span>
+					</div>
+				</div>
+				<div class="info_stars">
+					<span class="stars_descr">54 комментария</span>
+					<span class="stars_descr_stars">180 голосов</span>
+				</div>
+				<div class="info_block_text_wrap">	
+					<h2>Шаурма у сквера "Поляна"</h2>
+					<p>Одна из самых вкусных шаверм в этом районе. Неповторимый вкус достигается за счет свежих овощей и само собой вкуснейшего чесночного соуса!</p>
+				</div>
+			</div>
+		</a>
+		<a href="feedback.html">
+			<div class="info_block">
+				<div class="img_wrap">
+					<img src="images/viborzka.png" alt="№20" class="img_block">
+				</div>
+				<span class="adress_shava">ул. Выборгская 2/24</span>
+				<div class="hot_wrap">
+					<div class="hot">
+						<span class="hot_descr">
+							Острая!
+						</span>
+					</div>
+					<div class="price">$$
+						<span class="price_descr">30-40грн.</span>
+					</div>
+				</div>
+				<div class="info_stars">
+					<span class="stars_descr">5 комментариев</span>
+					<span class="stars_descr_stars">51 голос</span>
+				</div>
+				<div class="info_block_text_wrap">	
+					<h2>Чикен Мастер</h2>
+					<p>Ничем не примечательная шаурма среди десятков мест этого района</p>
+				</div>
+			</div>
+		</a>
+		<a href="feedback.html">
+			<div class="info_block">
+				<div class="img_wrap">
+					<img src="images/fora.png" alt="Laryok" class="img_block">
+				</div>
+				<span class="adress_shava">ул. Борщаговская 144-А</span>
+				<div class="hot_wrap">
+					<div class="hot">
+						<span class="hot_descr">
+							Острая!
+						</span>
+					</div>
+					<div class="price">$$$
+						<span class="price_descr">35-45грн.</span>
+					</div>
+					<div class="vegan">
+						<span class="vegan_descr">Фалафель!</span>
+					</div>
+				</div>
+				<div class="info_stars">
+					<span class="stars_descr">15 комментариев</span>
+					<span class="stars_descr_stars">78 голосов</span>
+				</div>
+				<div class="info_block_text_wrap">	
+					<h2>Чебурек/шаурма</h2>
+					<p>Любимая многими классическая шаурма, расположена рядом с обшежитем №20 в чистом и уютном помещении. </p>
+				</div>
+			</div>
+		</a>
+	</div>
+	<footer>
+		<div class="wrap">
+			<div class="e-mail">
+			</div>
+			<p class="descr_footer">Copyright © 2017 Two Bites</p>
+			<div class="social_ntw">
+				<div class="tw_logo"></div>
+				<div class="fb_logo"></div>
+			</div>
+		</div>
+	</footer>
+</body>
+</html>

@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<title>TwoBites</title>
+	<link rel="stylesheet" href="style.css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+</head>
+<body>
+	<header>
+		<div class="header_wrap wrap">
+			<span class="logo">
+				<i class="descr_logo">SoGood</i>
+			</span>
+			<nav>
+				<div id="nav-icon4">
+				  <span class="wad"></span>
+				  <span class="wad"></span>
+				  <span class="wad"></span>
+					<ul class="header_menu">
+						<li><a  class="home active" href="#">Главная</a></li>
+						<li><a  class="feedback" href="feedback.html">Отзывы</a></li>
+						<li><a  class="places" href="place.html">Места</a></li>
+						<li><a  class="contacts" href="about.html">О нас</a></li>
+					</ul>
+				</div>
+			</nav>
+		</div>
+		<div class="wrap">
+			<h1 class="heading">В поиске вкусов...</h1>
+			<form class="wrap_search">
+				<input id="search" placeholder="Введите город, район, улицу">
+				<button type="submit" class="main_btn">Поиск</button>
+			</form>
+		</div>
+	</header>
+	<a href="#modal1" class="open_modal_1">
+		<div id="map"></div>
+	</a>
+	<a href="#modal1" class="open_modal">
+	<div class="markers">
+		<div class="green">
+			<p>Вкусно!</p>
+		</div>
+		<div class="yellow">
+			<p>Нормально!</p>
+		</div>
+		<div class="red">
+			<p>Плохо!</p>
+		</div>
+	</div>
+	</a>
+	<div id="modal1" class="modal_div" style="opacity: 0; top: 45%; display: none;">
+ 		<form action="#" id="places">
+ 			<span class="modal_close">X</span>
+			<h1>Добавить место</h1>
+			<input type="text" class="form" placeholder="Введите название заведения" required>
+			<textarea id="comment"  class="form" cols="30" rows="10" placeholder="Описание" required></textarea>
+			<input type="file" class="file" accept="image/*" required>
+			<button type="submit" class="btn_place">Добавить</button>
+		</form>
+	</div>
+	<div id="overlay" style="display: none;"></div>
+	<footer>
+		<div class="wrap">
+			<div class="e-mail">
+			</div>
+			<p class="descr_footer">Copyright © 2017 Two Bites</p>
+			<div class="social_ntw">
+				<div class="tw_logo"></div>
+				<div class="fb_logo"></div>
+			</div>
+		</div>
+	</footer>
+<script>
+		$(document).ready(function(){
+	$('#nav-icon4').click(function(){
+		$(this).toggleClass('open');
+	});
+});
+		$(document).ready(function(){
+	$('#nav-icon4').click(function(){
+		$(this).toggleClass('close');
+	});
+});
+</script>
+<script type="text/javascript">
+ymaps.ready(init);
+var myMap, 
+myPlacemark;
+function init(){ 
+myMap = new ymaps.Map("map", {
+center: [50.446744, 30.453365],
+zoom: 16
+});
+myMap.behaviors.disable('scrollZoom');
+myMap.behaviors.disable('drag');
+
+myMap.events.add('click', function (e) {
+		var coords = e.get('coords');
+       	if (myPlacemark) {
+            myPlacemark.geometry.setCoordinates(coords);
+        }
+
+        else {
+            myPlacemark = createPlacemark(coords);
+            myMap.geoObjects.add(myPlacemark);
+
+            myPlacemark.events.add('dragend', function () {
+                getAddress(myPlacemark.geometry.getCoordinates());
+            });
+        }
+        getAddress(coords);
+    });
+    function createPlacemark(coords) {
+        return new ymaps.Placemark(coords, {
+            iconCaption: 'Добавляем новое место...'
+        }, {
+            preset: 'islands#grayDotIconWithCaption',
+            draggable: false
+        });
+    }
+
+
+iconGreen = new ymaps.GeoObjectCollection({}, {
+preset: 'islands#greenIcon', 
+draggable: false 
+});
+iconYellow = new ymaps.GeoObjectCollection({}, {
+preset: 'islands#yellowIcon', 
+draggable: false 
+});
+iconRed = new ymaps.GeoObjectCollection({}, {
+preset: 'islands#redIcon', 
+draggable: false 
+});
+
+
+iconGreen.add(new ymaps.Placemark([50.446844, 30.453365], {
+	 balloonContentBody: [
+            '<address>',
+            '<strong>Шаурма у ст.т. "Полевая"</strong>',
+            '<br/>',
+            'Адрес: Киев, ул. Борщаговская, 115',
+            '<br/>',
+            '<a href="feedback.html#Polevaya">Отзывы</a>',
+            '</address>'
+        ].join('')
+})); //Ст.т. "Полевая"
+iconYellow.add(new ymaps.Placemark([50.446752,  30.452351], { balloonContentBody: [
+            '<address>',
+            '<strong>Чикен Мастер</strong>',
+            '<br/>',
+            'Адрес: Киев, ул. Выборгская, 2/24',
+            '<br/>',
+            '<a href="feedback.html">Отзывы</a>',
+            '</address>'
+        ].join('')}));//чикенмастер
+iconYellow.add(new ymaps.Placemark([50.446861, 30.452614], { balloonContentBody: [
+            '<address>',
+            '<strong>Чебурек/шаурма</strong>',
+            '<br/>',
+            'Адрес: Киев, ул. Борщаговская, 144-А',
+            '<br/>',
+            '<a href="feedback.html">Отзывы</a>',
+            '</address>'
+        ].join('')}));//Шаурма-чебуреки
+iconRed.add(new ymaps.Placemark([50.446810, 30.453564], { 	
+	balloonContentBody: [
+            '<address>',
+            '<strong>Шаурма у сквера "Поляна"</strong>',
+            '<br/>',
+            'Адрес: Киев, ул. Борщаговская, 115',
+            '<br/>',
+            '<a href="feedback.html">Отзывы</a>',
+            '</address>'
+        ].join('')}));//Поляна
+iconRed.add(new ymaps.Placemark([50.445182, 30.443010], {  balloonContentBody: [
+            '<address>',
+            '<strong>Шаурма у ТЦ "Аркадия"</strong>',
+            '<br/>',
+            'Адрес: Киев, ул. Борщаговская, 154',
+            '<br/>',
+            '<a href="feedback.html#Arkadia">Отзывы</a>',
+            '</address>'
+        ].join('')}));//Аркадия
+myMap.geoObjects.add(iconGreen);
+myMap.geoObjects.add(iconYellow);
+myMap.geoObjects.add(iconRed);
+}
+</script>
+<script>
+	 $(document).ready(function() {
+    var overlay = $('#overlay'); 
+    var open_modal = $('.open_modal'); 
+    var close = $('.modal_close, #overlay'); 
+    var modal = $('.modal_div'); 
+     open_modal.click( function(event){
+         event.preventDefault(); 
+         var div = $(this).attr('href');
+         console.log(div);
+         overlay.fadeIn(400, 
+             function(){ 
+                 $(div)
+                     .css('display', 'block') 
+                     .animate({opacity: 1, top: '50%'}, 200); 
+         });
+     });
+
+     close.click( function(){ 
+            modal
+             .animate({opacity: 0, top: '45%'}, 200, 
+                 function(){ 
+                     $(this).css('display', 'none');
+                     overlay.fadeOut(400);
+                 }
+             );
+     });
+});
+</script>
+<script>
+	 $(document).ready(function() {
+    var overlay = $('#overlay'); 
+    var open_modal = $('.open_modal_1'); 
+    var close = $('.modal_close, #overlay'); 
+    var modal = $('.modal_div'); 
+     open_modal.dblclick( function(event){
+         event.preventDefault(); 
+         var div = $(this).attr('href');
+         console.log(div);
+         overlay.fadeIn(400, 
+             function(){ 
+                 $(div)
+                     .css('display', 'block') 
+                     .animate({opacity: 1, top: '50%'}, 200); 
+         });
+     });
+
+     close.click( function(){ 
+            modal
+             .animate({opacity: 0, top: '45%'}, 200, 
+                 function(){ 
+                     $(this).css('display', 'none');
+                     overlay.fadeOut(400);
+                 }
+             );
+     });
+});
+</script>
+</body>
+</html>

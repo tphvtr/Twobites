@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<title>TwoBites</title>
+	<link rel="stylesheet" href="style.css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+</head>
+<body>
+<script>
+	$(document).ready(function(){
+	$('#nav-icon4').click(function(){
+		$(this).toggleClass('open');
+	});
+});
+	$(document).ready(function(){
+	$('#nav-icon4').click(function(){
+		$(this).toggleClass('close');
+	});
+});
+</script>
+<script>
+	function change_visibility (block_4_close, block_4_open) {
+   $(document).ready(function(){
+       $('#'+block_4_close).css('display','none');
+       $('#'+block_4_open).css('display','');
+       return false;
+   });
+}
+</script>
+	<header>
+		<div class="header_wrap wrap">
+			<a href="index.html">
+				<span class="logo">
+					<i class="descr_logo">SoGood</i>
+				</span>
+			</a>
+			<nav>
+				<div id="nav-icon4">
+				  <span class="wad"></span>
+				  <span class="wad"></span>
+				  <span class="wad"></span>
+					<ul class="header_menu">
+						<li><a  class="home" href="index.html">Главная</a></li>
+						<li><a  class="feedback active" href="#">Отзывы</a></li>
+						<li><a  class="places" href="place.html">Места</a></li>
+						<li><a  class="contacts" href="about.html">О нас</a></li>
+					</ul>
+				</div>
+			</nav>
+		</div>
+		<div class="wrap">
+			<h1 class="heading">В поиске вкусов...</h1>
+			<form class="wrap_search">
+				<input id="search" placeholder="Введите город, район, улицу">
+				<button type="submit" class="main_btn">Поиск</button>
+			</form>
+		</div>
+	</header>
+	<div class="wrap">
+		<div class="stars" id="Shulya">
+			<div class="img_feedback">
+				<img src="images/shulya.jpg" alt="" class="img_block">
+			</div>
+			<a href="#modal2" class="open_modal btn_popup">Оставить отзыв</a>
+			<h2>
+			Шаурма у м.Шулявская
+			</h2>
+			<div class="info_stars">
+				<span class="stars_descr">58 комментариев</span>
+				<span class="stars_descr_stars">158 голосов</span>
+			</div>
+			<div class="info_stars">
+				<span class="stars_descr none_border">23 Февраля 2017</span>
+			</div>
+			<div id="r0" class="article_descr">
+   				<p>расположена в очень людном месте, а следовательно стабильно имеет большой поток покупателей...</p>
+   				<a href="javascript:change_visibility ('r0', 'r1')">
+			      Читать далее»
+			   </a>
+			</div>
+			<div id="r1" class="article_descr" style="display:none">
+				<p>расположена в очень людном месте, а следовательно стабильно имеет большой поток покупателей;
+				аккуратный продавец ,который работает в перчатках; достаточно большой выбор дополнительных начинок в доступную цену; качественное и вкусное мясо, которое еще и мелко накрошат; порции большие; лаваш целый, крепкий, не начинает протекать на пол шаурмы; рекомендуется всем любителям много и вкусно поесть шаурмы.</p>
+				<a href="#r0" onClick="change_visibility ('r1', 'r0')">
+				  «Скрыть
+				</a>
+			</div>
+			<div class="info_stars">
+				<span class="stars_descr none_border">19 Февраля 2017</span>
+			</div>
+			<div id="r2" class="article_descr">
+   				<p>в целом, мне очень понравилась шаурма в этой закусночной /* может как-то по другому */, брал двойную с бараниной...</p>
+   				<a href="javascript:change_visibility ('r2', 'r3')">
+			      Читать далее»
+			   </a>
+			</div>
+			<div id="r3" class="article_descr" style="display:none">
+				<p>в целом, мне очень понравилась шаурма в этой закусночной /* может как-то по другому */, брал двойную с бараниной,
+				 и настолько нассыщенного вкуса я ещё не ощущал. бараний порубленный стейк, приправленный каким-то очень вкусным соусом, овощи по вкусу. персонал и обслуживание - на высшом уровне! буду советовать знакомым, и сам зайду ещё не раз, спасибо!</p>
+				<a href="#r2" onClick="change_visibility ('r3', 'r2')">
+				  «Скрыть
+				</a>
+			</div>
+		</div>
+		<div class="stars" id="Polevaya">
+			<div class="img_feedback">
+				<img src="images/place_polyana.png" alt="" class="img_block">
+			</div>
+			<a href="#modal2" class="open_modal btn_popup">Оставить отзыв</a>
+			<h2>
+			Шаурма у ст.т."Полевая"
+			</h2>
+			<div class="info_stars">
+				<span class="stars_descr">145 комментариев</span>
+				<span class="stars_descr_stars">231 голос</span>
+			</div>
+			<div class="info_stars">
+				<span class="stars_descr none_border">23 Февраля 2017</span>
+			</div>
+			<div id="r4" class="article_descr">
+   				<p>прочитал про эту шаву в "подслушано в кпи", отзывы были крайне положительные, мол шава большая и вообще все норм...</p>
+   				<a href="javascript:change_visibility ('r4', 'r5')">
+			      Читать далее»
+			   </a>
+			</div>
+			<div id="r5" class="article_descr" style="display:none">
+				<p>прочитал про эту шаву в "подслушано в кпи", отзывы были крайне положительные, мол шава большая и вообще все норм
+				взял я значит двойную шаву, и сказать про нее "большая" у меня язык не повернется, она скорее размера "разорви хлебало"
+				на этом ее достоинства заканчиваются
+				на вкус пресная, лаваш расползается и через буквально через несколько минут твоя шаверма превратится в месиво, на поедание которого у тебя будет уходить много сил и концентрации</p>
+				<a href="#r4" onClick="change_visibility ('r5', 'r4')">
+				  «Скрыть
+				</a>
+			</div>
+			<div class="info_stars">
+				<span class="stars_descr none_border">22 Февраля 2017</span>
+			</div>
+			<div id="r6" class="article_descr">
+   				<p>расположена прямо в парке, но выторг средний; повар аккуратный и заведение чистое...</p>
+   				<a href="javascript:change_visibility ('r6', 'r7')">
+			      Читать далее»
+			   </a>
+			</div>
+			<div id="r7" class="article_descr" style="display:none">
+				<p>расположена прямо в парке, но выторг средний; повар аккуратный и заведение чистое;
+				порции сносные, начинки много, но вот мяса явно мало, больше вегетарианский вариант; лаваш вкусный, но под конец не спешной еды "донце" начинает плыть и все остатки соуса вытекаю вам на руки; в целом терпимый вариант, если у вас нет особого бюджета</p>
+				<a href="#r6" onClick="change_visibility ('r7', 'r6')">
+				  «Скрыть
+				</a>
+			</div>
+			<div class="info_stars">
+				<span class="stars_descr none_border">22 Февраля 2017</span>
+			</div>
+			<div id="r8" class="article_descr">
+   				<p>как то раз, волею судеб мне пришлось попробовать шаву на поляне...
+				</p>
+   				<a href="javascript:change_visibility ('r8', 'r9')">
+			      Читать далее»
+			   </a>
+			</div>
+			<div id="r9" class="article_descr" style="display:none">
+				<p>как то раз, волею судеб мне пришлось попробовать шаву на поляне
+				обслуживает тебя молодая девушка, а не типикал шаур-мен, вроде как ничего критичного, но все равно приятное дополнение к шаве
+				мясо хорошее</p>
+				<a href="#r8" onClick="change_visibility ('r9', 'r8')">
+				  «Скрыть
+				</a>
+			</div>
+		</div>
+		<div class="stars" id="Arkadia">
+			<div class="img_feedback">
+				<img src="images/arkadia.jpg" alt="" class="img_block">
+			</div>
+			<a href="#modal2" class="open_modal btn_popup">Оставить отзыв</a>
+			<h2>
+			Шаурма у входа в тц."Arkadia"
+			</h2>
+			<div class="info_stars">
+				<span class="stars_descr">28 комментариев</span>
+				<span class="stars_descr_stars">124 голоса</span>
+			</div>
+			<div class="info_stars">
+				<span class="stars_descr none_border">23 Февраля 2017</span>
+			</div>
+			<div id="r10" class="article_descr">
+   				<p>на счет это шаурмичной не могу сказать ничего резко плохого, как и резко хорошего
+				...</p>
+   				<a href="javascript:change_visibility ('r10', 'r11')">
+			      Читать далее»
+			   </a>
+			</div>
+			<div id="r11" class="article_descr" style="display:none">
+				<p>на счет это шаурмичной не могу сказать ничего резко плохого, как и резко хорошего
+				мясо обычное, цены обычные, ничего характерного
+				что запомнилось, это очень приветливый и общительный шаур-мен, но в свою очередь он спалил мой лаваш, так что я не знаю относить этого работника к достоинствам или недостаткам этой шаурмишной.</p>
+				<a href="#r10" onClick="change_visibility ('r11', 'r10')">
+				  «Скрыть
+				</a>
+			</div>
+			<div class="info_stars">
+				<span class="stars_descr none_border">22 Февраля 2017</span>
+			</div>
+			<div id="r12" class="article_descr">
+   				<p>внешне всё не плохо, но не единожды было замечено что повар не пользуется перчатками, к своей работе относиться явно не ответственно;</p>
+   				<a href="javascript:change_visibility ('r12', 'r13')">
+			      Читать далее»
+			   </a>
+			</div>
+			<div id="r13" class="article_descr" style="display:none">
+				<p>внешне всё не плохо, но не единожды было замечено что повар не пользуется перчатками, к своей работе относиться явно не ответственно;
+				мясо рубят большими ломтями и есть его крайне не удобно; набор начинок ни чем не выделяется; соус каждый раз разный - то нормальный, то горький, то просто такой что есть не возможно; лаваш начинает таять в руках еще до того как вы съедите хотя б половину шаурмы; цены и близко не соответствуют качеству; вариант только для тех кто хочет попробовать явно НЕ качественную шаурму и понять как быть не должно.</p>
+				<a href="#r12" onClick="change_visibility ('r13', 'r12')">
+				  «Скрыть
+				</a>
+			</div>
+
+		</div>
+	</div>
+	<div id="modal2" class="modal_div" style="opacity: 0; top: 45%; display: none;">
+		<form action="#" id="feedback">
+			<span class="modal_close">X</span>
+			<h1>Оставить отзыв</h1>
+			<label for="name">
+				<input type="text"  class="form" id="name" placeholder="Введите имя" required>
+			</label>
+			<label for="e-mail">
+				<input type="email"  class="form" id="e-mail" placeholder="your-email@mail.com" required>
+			</label>
+			<textarea id="comment"  class="form" cols="30" rows="10" placeholder="Оставьте свой комментарий" required></textarea>
+			<select class="form">
+				<option>Шаурма у м.Шулявская</option>
+				<option>Шаурма у входа в ТЦ "Arkadia"</option>
+				<option>Шаурма у сквера "Поляна"</option>
+				<option>Чикен Мастер</option>
+				<option>Чебурек/шаурма</option>
+				<option>Шаурма у ст.т."Полевая"</option>
+			</select>
+			<button type="submit" class="btn_place">Отправить</button>
+		</form>
+	</div>
+	<div id="overlay" style="display: none;"></div>
+	<footer>
+		<div class="wrap">
+			<div class="e-mail">
+			</div>
+			<p class="descr_footer">Copyright © 2017 Two Bites</p>
+			<div class="social_ntw">
+				<div class="tw_logo"></div>
+				<div class="fb_logo"></div>
+			</div>
+		</div>
+	</footer>
+<script>
+	$(document).ready(function() {
+    var overlay = $('#overlay'); 
+    var open_modal = $('.open_modal'); 
+    var close = $('.modal_close, #overlay'); 
+    var modal = $('.modal_div'); 
+     open_modal.click( function(event){
+         event.preventDefault(); 
+         var div = $(this).attr('href');
+         console.log(div);
+         overlay.fadeIn(400, 
+             function(){ 
+                 $(div)
+                     .css('display', 'block') 
+                     .animate({opacity: 1, top: '50%'}, 200); 
+         });
+     });
+
+     close.click( function(){ 
+            modal
+             .animate({opacity: 0, top: '45%'}, 200, 
+                 function(){ 
+                     $(this).css('display', 'none');
+                     overlay.fadeOut(400);
+                 }
+             );
+     });
+});
+
+</script>
+</body>
+</html>
